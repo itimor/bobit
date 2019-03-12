@@ -9,12 +9,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 # expected_conditions 类，负责条件出发
 from selenium.webdriver.support import expected_conditions as EC
 import platform
+from config import siteinfo
 
-siteinfo = {
-    "url": "https://bbs.8boniu.com/k_misign-sign.html",
-    "username": 'itimor',
-    "password": 'jay541430183'
-    }
 
 # 如果没有在环境变量指定PhantomJS位置
 if platform.system() == 'Windows':
