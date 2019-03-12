@@ -8,6 +8,7 @@ pip install selenium
 
 运行
 ```python
+chmod +x linux/phantomjs
 python run.py
 ```
 
