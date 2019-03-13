@@ -48,11 +48,15 @@ try:
     element = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "JD_sign"))
     )
+    # 生成当前页面快照并保存
+    driver.save_screenshot("before_sign.png")
     # 点击签到
     element.click()
 except:
     print("already sign")
 finally:
+    # 等待加载
+    driver.implicitly_wait(5)  # seconds
     # 生成签到页面快照并保存
     driver.save_screenshot("sign.png")
     driver.quit()
