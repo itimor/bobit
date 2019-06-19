@@ -14,7 +14,7 @@ from config import siteinfo
 
 # 如果没有在环境变量指定PhantomJS位置
 if platform.system() == 'Windows':
-    driver = webdriver.PhantomJS(executable_path="windows/phantomjs")
+    driver = webdriver.Chrome(executable_path="windows/chromedriver")
 else:
     driver = webdriver.PhantomJS(executable_path="linux/phantomjs")
 
@@ -23,6 +23,9 @@ driver.get(siteinfo["url"])
 
 # 等待加载
 driver.implicitly_wait(5)  # seconds
+
+# 关闭弹窗
+driver.find_element_by_id("shut_down_alert").click()
 
 # 点击登录
 driver.find_element_by_id("JD_sign").click()
