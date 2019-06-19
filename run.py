@@ -15,6 +15,8 @@ from config import siteinfo
 # 如果没有在环境变量指定PhantomJS位置
 if platform.system() == 'Windows':
     driver = webdriver.Chrome(executable_path="windows/chromedriver")
+    # 如果windows下需要phantomjs模式，现在在phantomjs到对应目录
+    # driver = webdriver.PhantomJS(executable_path="windows/phantomjs")
 else:
     driver = webdriver.PhantomJS(executable_path="linux/phantomjs")
 
