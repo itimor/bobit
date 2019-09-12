@@ -27,7 +27,10 @@ driver.get(siteinfo["url"])
 driver.implicitly_wait(5)  # seconds
 
 # 关闭弹窗
-driver.find_element_by_id("shut_down_alert").click()
+try:
+    driver.find_element_by_id("shut_down_alert").click()
+except:
+    pass
 
 # 点击登录
 driver.find_element_by_id("JD_sign").click()
